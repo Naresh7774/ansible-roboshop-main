@@ -1,3 +1,8 @@
 - name: create ec2 and r53
   hosts: local
   connection: local
+  vars:
+    ami_id: ami-09c813fb71547fc4f
+    sg_id: sg-07c8acf3fa6b923fa
+    zone_id: "Z0948150OFPSYTNVYZOY"
+    domain_name: "daws86s.fun"
