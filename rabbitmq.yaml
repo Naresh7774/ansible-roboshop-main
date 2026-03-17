@@ -1,0 +1,3 @@
+- name: setup rabbitmq server
+  hosts: rabbitmq
+  become: yes
