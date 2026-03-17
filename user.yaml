@@ -31,3 +31,19 @@
     ansible.builtin.file:
       state: directory
       path: /app
+
+  - name: Delete user file
+    ansible.builtin.file:
+      path: /tmp/user.zip
+      state: absent
+
+  - name: download user application
+    ansible.builtin.get_url:
+      url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
+      dest: /tmp/user.zip
+
+  - name: extract user application
+    ansible.builtin.unarchive:
+      src: /tmp/user.zip
+      dest: /app
+      remote_src: yes
