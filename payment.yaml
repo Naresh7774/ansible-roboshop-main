@@ -1,0 +1,3 @@
+- name: configure payment server
+  hosts: payment
+  become: yes
